@@ -1,0 +1,59 @@
+[package]
+name = "obenchara"
+version = "0.1.0"
+edition.workspace = true
+authors.workspace = true
+description.workspace = true
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+common = { path = "./modules/common" }
+domain = { path = "./modules/domain" }
+interface = { path = "./modules/interface" }
+usecase = { path = "./modules/usecase" }
+registry = { path = "./modules/registry" }
+infrastructure = { path = "./modules/infrastructure" }
+
+tokio = { workspace = true }
+
+
+[dev-dependencies]
+
+
+[features]
+
+
+[workspace.package]
+edition = "2021"
+authors = ["developers <anonymous@hoge.com>"]
+description = "axum Web Application Server"
+
+
+[workspace]
+members = [
+    "./modules/common",
+    "./modules/domain",
+    "./modules/interface",
+    "./modules/usecase",
+    "./modules/registry",
+    "./modules/infrastructure",
+]
+
+
+[workspace.dependencies]
+dotenv = "0.15.0"
+anyhow = "1.0.66"
+chrono = "0.4.22"
+serde = { version = "1.0.145", features = ["derive"] }
+serde_json = "1.0.87"
+async-trait = "0.1.58"
+sqlx = { version = "0.6.2", features = [ "postgres", "chrono"] }
+log = "0.4.0"
+tracing = "0.1.37"
+tracing-subscriber = "0.3.16"
+tracing-appender = "0.2.2"
+config = "0.13.2"
+thiserror = "1.0.37"
+axum = "0.6.4"
+tokio = { version = "1.0", features = ["full"] }

@@ -1,0 +1,20 @@
+[package]
+name = "infrastructure"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+common = { path = "../common" }
+domain = { path = "../domain" }
+interface = { path = "../interface" }
+registry = { path = "../registry" }
+usecase = { path = "../usecase" }
+
+dotenv = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+anyhow = { workspace = true }
+axum = { workspace = true }
+tokio = { workspace = true }

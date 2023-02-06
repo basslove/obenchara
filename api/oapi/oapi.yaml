@@ -1,0 +1,43 @@
+openapi: 3.0.2
+info:
+  title: sample-interface
+  version: "1.0"
+  description: "sample API"
+  contact:
+    name: annoymous
+servers:
+  - url: "http://localhost:1234/v1/"
+    description: localhost
+
+paths:
+  /kanri/sight_categories:
+    get:
+      tags:
+        - sight_category
+      summary: 観光場所カテゴリ
+      description: 観光場所カテゴリ一覧取得
+      operationId: getSightCategories
+      parameters:
+        - name: offset
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int64
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int64
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: './components/schemas/interfaces/sight_categories.yaml#/components/schemas/GetSightCategoriesResponse'
+
+externalDocs:
+  description: "Swagger公式"
+  url: http://swagger.io
